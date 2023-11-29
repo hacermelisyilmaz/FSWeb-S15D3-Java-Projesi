@@ -22,9 +22,14 @@ public class Main {
         employeeList.add(emp7);
         System.out.println(employeeList);
 
-        Set<Employee> uniqueEmployees = new HashSet<Employee>(employeeList);
+        Map<Integer, Employee> uniqueEmployees = new HashMap<>();
+        for (Employee employee: employeeList) {
+            uniqueEmployees.put(employee.getId(), employee);
+        }
         System.out.println(uniqueEmployees);
 
-
+        List<Employee> recurringEmployees = new ArrayList<>(employeeList);
+        recurringEmployees.removeIf(employee -> uniqueEmployees.get(employee.getId()).equalsForRecurring(employee));
+        System.out.println(recurringEmployees);
     }
 }
