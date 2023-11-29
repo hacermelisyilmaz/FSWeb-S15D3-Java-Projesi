@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("***** TASK 1: COMPANY *****");
         Employee emp1 = new Employee(1, "Melis", "Yılmaz");
         Employee emp2 = new Employee(2, "Melisa", "Yılmaz");
         Employee emp3 = new Employee(3, "Ayla", "Yılmaz");
@@ -12,7 +13,7 @@ public class Main {
         Employee emp6 = new Employee(5, "Miray", "Tunç");
         Employee emp7 = new Employee(2, "Nil", "Gürsoy");
 
-        List<Employee> employeeList = new LinkedList<Employee>();
+        List<Employee> employeeList = new LinkedList<>();
         employeeList.add(emp1);
         employeeList.add(emp2);
         employeeList.add(emp3);
@@ -20,16 +21,16 @@ public class Main {
         employeeList.add(emp5);
         employeeList.add(emp6);
         employeeList.add(emp7);
-        System.out.println(employeeList);
+        System.out.println("** FULL EMPLOYEE LIST **\n" + employeeList);
 
         Map<Integer, Employee> uniqueEmployees = new HashMap<>();
         for (Employee employee: employeeList) {
             uniqueEmployees.put(employee.getId(), employee);
         }
-        System.out.println(uniqueEmployees);
+        System.out.println("** UNIQUE EMPLOYEES LIST **\n" + uniqueEmployees);
 
         List<Employee> recurringEmployees = new ArrayList<>(employeeList);
         recurringEmployees.removeIf(employee -> uniqueEmployees.get(employee.getId()).equalsForRecurring(employee));
-        System.out.println(recurringEmployees);
+        System.out.println("** RECURRING EMPLOYEES LIST **\n" + recurringEmployees);
     }
 }
