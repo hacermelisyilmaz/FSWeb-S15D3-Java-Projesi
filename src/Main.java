@@ -11,5 +11,17 @@ public class Main {
         Employee emp5 = new Employee(4, "Evrim", "Yılmaz");
         Employee emp6 = new Employee(5, "Miray", "Tunç");
         Employee emp7 = new Employee(2, "Nil", "Gürsoy");
+
+        List<Employee> employeeList = new LinkedList<Employee>();
+        employeeList.add(emp1);
+        employeeList.add(emp2);
+        employeeList.add(emp3);
+        employeeList.add(emp4);
+        employeeList.add(emp5);
+        employeeList.add(emp6);
+        employeeList.add(emp7);
+        System.out.println(employeeList);
+
+
     }
 }
