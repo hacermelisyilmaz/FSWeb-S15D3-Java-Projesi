@@ -41,8 +41,9 @@ public class Employee {
         return id == employee.id;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
+    public boolean equalsForRecurring(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Employee employee)) return false;
+        return id == employee.getId() && firstName.equals(employee.getFirstName()) && lastName.equals(employee.getLastName());
     }
 }
