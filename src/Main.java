@@ -22,8 +22,9 @@ public class Main {
         employeeList.add(emp7);
         System.out.println(employeeList);
 
-        Set<Employee> uniqueEmployees = new HashSet<Employee>();
-        uniqueEmployees.addAll(employeeList);
+        Set<Employee> uniqueEmployees = new HashSet<Employee>(employeeList);
         System.out.println(uniqueEmployees);
+
+
     }
 }
